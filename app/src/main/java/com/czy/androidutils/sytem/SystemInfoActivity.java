@@ -1,8 +1,10 @@
 package com.czy.androidutils.sytem;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
+import android.text.format.Formatter;
 import android.widget.TextView;
 
 import com.czy.androidutils.BaseActivity;
@@ -14,6 +16,8 @@ import com.czy.androidutils.R;
  * 描述：
  */
 public class SystemInfoActivity extends BaseActivity {
+
+    private static final String TAG = "SystemInfoActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,7 @@ public class SystemInfoActivity extends BaseActivity {
                 + "\n" + "Host值：" + Build.HOST
                 + "\n" + "User名：" + Build.USER
                 + "\n" + "编译时间：" + Build.TIME
-                + "\n" + "OS版本：" + System.getProperty("os.version")
+                + "\n\n" + "OS版本：" + System.getProperty("os.version")
                 + "\n" + "OS名称：" + System.getProperty("os.name")
                 + "\n" + "OS架构：" + System.getProperty("os.arch")
                 + "\n" + "Home属性：" + System.getProperty("user.home")
@@ -60,6 +64,15 @@ public class SystemInfoActivity extends BaseActivity {
                 + "\n" + "Java Vendor属性：" + System.getProperty("java.vendor")
                 + "\n" + "Java 版本：" + System.getProperty("java.version")
                 + "\n" + "Java Home属性：" + System.getProperty("java.home");
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        if (activityManager != null) {
+            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+            activityManager.getMemoryInfo(memoryInfo);
+            info = info + "\n\n" + "设备总内存大小：" + Formatter.formatFileSize(this, memoryInfo.totalMem)
+                    + "\n" + "设备可用内存大小：" + Formatter.formatFileSize(this, memoryInfo.availMem)
+                    + "\n" + "设备内存不足的阀值：" + Formatter.formatFileSize(this, memoryInfo.threshold)
+                    + "\n" + "设备是否处于低内存状态（可用内存是否小于设备内存不足的阀值）：" + memoryInfo.lowMemory;
+        }
         tv_systemInfo.setText(info);
     }
 
