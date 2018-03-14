@@ -36,7 +36,7 @@ Android工具类库
 
 <br>
 
-#### 3. 应用相关 -> [ScreenUtils.java](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/java/com/czy/androidutils/sytem/utils/AppInfoUtils.java)
+#### 3. 应用相关 -> [AppInfoUtils.java](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/java/com/czy/androidutils/sytem/utils/AppInfoUtils.java)
  
   - isSystemApplication：   &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;判断是否是系统应用
   
