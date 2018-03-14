@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".sytem.SystemInfoActivity" />
         <activity android:name=".sytem.AppInfoActivity" />
-        <activity android:name=".sytem.ScreenInfoActivity"></activity>
+        <activity android:name=".sytem.ScreenInfoActivity" />
+        <activity android:name=".ad.AdActivity"></activity>
     </application>
 
 </manifest>

@@ -93,7 +93,7 @@ public class AppInfoUtils {
     /**
      * 判断指定包名的应用是否存在
      */
-    private boolean appExist(Context context, String packageName) {
+    public static boolean appExist(Context context, String packageName) {
         List<PackageInfo> packageInfoList = context.getPackageManager().getInstalledPackages(0);
         for (PackageInfo packageInfo : packageInfoList) {
             if (packageInfo.packageName.equals(packageName)) {

@@ -3,6 +3,7 @@ package com.czy.androidutils;
 import android.os.Bundle;
 import android.view.View;
 
+import com.czy.androidutils.ad.AdActivity;
 import com.czy.androidutils.sytem.AppInfoActivity;
 import com.czy.androidutils.sytem.ScreenInfoActivity;
 import com.czy.androidutils.sytem.SystemInfoActivity;
@@ -20,7 +21,6 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     public void showSystemInfo(View view) {
@@ -34,4 +34,9 @@ public class MainActivity extends BaseActivity {
     public void showScreenInfo(View view) {
         startActivity(ScreenInfoActivity.class);
     }
+
+    public void showAdAction(View view) {
+        startActivity(AdActivity.class);
+    }
+
 }

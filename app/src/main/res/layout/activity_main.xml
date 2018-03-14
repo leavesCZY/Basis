@@ -14,14 +14,20 @@
 
     <Button
         android:layout_width="match_parent"
-        android:onClick="showAppInfo"
         android:layout_height="wrap_content"
+        android:onClick="showAppInfo"
         android:text="获取设备应用参数" />
 
     <Button
-        android:onClick="showScreenInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="showScreenInfo"
         android:text="获取设备屏幕参数" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showAdAction"
+        android:text="广告相关" />
 
 </LinearLayout>
