@@ -63,17 +63,52 @@ public class SystemInfoActivity extends BaseActivity {
                 + "\n" + "Java Class版本：" + System.getProperty("java.class.version")
                 + "\n" + "Java Vendor属性：" + System.getProperty("java.vendor")
                 + "\n" + "Java 版本：" + System.getProperty("java.version")
-                + "\n" + "Java Home属性：" + System.getProperty("java.home");
-        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+                + "\n" + "Java Home属性：" + System.getProperty("java.home")
+                + "\n" + "设备总内存大小：" + Formatter.formatFileSize(this, getTotalMemory(this))
+                + "\n" + "设备可用内存大小：" + Formatter.formatFileSize(this, getAvailMemory(this))
+                + "\n" + "设备内存不足的阀值：" + Formatter.formatFileSize(this, getThreshold(this))
+                + "\n" + "设备是否处于低内存状态（可用内存是否小于设备内存不足的阀值）：" + isLowMemory(this);
+        tv_systemInfo.setText(info);
+    }
+
+    public static long getTotalMemory(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         if (activityManager != null) {
             ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
             activityManager.getMemoryInfo(memoryInfo);
-            info = info + "\n\n" + "设备总内存大小：" + Formatter.formatFileSize(this, memoryInfo.totalMem)
-                    + "\n" + "设备可用内存大小：" + Formatter.formatFileSize(this, memoryInfo.availMem)
-                    + "\n" + "设备内存不足的阀值：" + Formatter.formatFileSize(this, memoryInfo.threshold)
-                    + "\n" + "设备是否处于低内存状态（可用内存是否小于设备内存不足的阀值）：" + memoryInfo.lowMemory;
+            return memoryInfo.totalMem;
         }
-        tv_systemInfo.setText(info);
+        return 0;
+    }
+
+    public static long getAvailMemory(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        if (activityManager != null) {
+            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+            activityManager.getMemoryInfo(memoryInfo);
+            return memoryInfo.availMem;
+        }
+        return 0;
+    }
+
+    public static long getThreshold(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        if (activityManager != null) {
+            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+            activityManager.getMemoryInfo(memoryInfo);
+            return memoryInfo.threshold;
+        }
+        return 0;
+    }
+
+    public static boolean isLowMemory(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        if (activityManager != null) {
+            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+            activityManager.getMemoryInfo(memoryInfo);
+            return memoryInfo.lowMemory;
+        }
+        return false;
     }
 
 }
