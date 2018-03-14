@@ -12,6 +12,16 @@ import android.net.Uri;
 public class AdUtils {
 
     /**
+     * 打开应用市场指定应用的详情页
+     *
+     * @param context     上下文
+     * @param packageName 包名
+     */
+    public static void openApplicationMarket(Context context, String packageName) {
+        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName)));
+    }
+
+    /**
      * 打开京东客户端指定商铺
      *
      * @param context 上下文

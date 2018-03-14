@@ -1,7 +1,5 @@
 package com.czy.androidutils.ad;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -25,7 +23,7 @@ public class AdActivity extends BaseActivity {
     }
 
     public void openApplicationMarket(View view) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "com.tencent.mobileqq")));
+        AdUtils.openApplicationMarket(this, "com.tencent.mobileqq");
     }
 
     public void openJdShop(View view) {
