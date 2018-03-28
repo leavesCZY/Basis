@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.czy.androidutils.ad.AdActivity;
+import com.czy.androidutils.drawable.DrawableActivity;
 import com.czy.androidutils.sytem.AppInfoActivity;
 import com.czy.androidutils.sytem.ScreenInfoActivity;
 import com.czy.androidutils.sytem.SystemInfoActivity;
@@ -37,6 +38,10 @@ public class MainActivity extends BaseActivity {
 
     public void showAdAction(View view) {
         startActivity(AdActivity.class);
+    }
+
+    public void showDrawable(View view) {
+        startActivity(DrawableActivity.class);
     }
 
 }

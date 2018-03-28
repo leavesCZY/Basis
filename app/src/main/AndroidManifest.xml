@@ -19,7 +19,8 @@
         <activity android:name=".sytem.SystemInfoActivity" />
         <activity android:name=".sytem.AppInfoActivity" />
         <activity android:name=".sytem.ScreenInfoActivity" />
-        <activity android:name=".ad.AdActivity"></activity>
+        <activity android:name=".ad.AdActivity" />
+        <activity android:name=".drawable.DrawableActivity"></activity>
     </application>
 
 </manifest>

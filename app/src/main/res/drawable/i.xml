@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#00ffffff" />
+            <!--每条线的宽度是：dashWidth 线之间的宽度是：dashGap-->
+            <stroke android:width="1dp" android:color="#272133" android:dashGap="10dp" android:dashWidth="10dp" />
+            <size android:height="1dp" />
+            <corners android:radius="30dp" />
+        </shape>
+    </item>
+
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#00ffffff" />
+            <!--每条线的宽度是：dashWidth 线之间的宽度是：dashGap-->
+            <stroke android:width="1dp" android:color="#e45d5d" android:dashGap="10dp" android:dashWidth="10dp" />
+            <size android:height="1dp" />
+            <corners android:radius="30dp" />
+        </shape>
+    </item>
+
+</selector>
