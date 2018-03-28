@@ -78,3 +78,33 @@ Android工具类库
   - openTmallShop：打开天猫客户端指定商铺
   
   - openTmallGoods：打开天猫客户端指定商品详情页
+
+#### 6. Drawable相关 -> [activity_drawable.xml](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/res/layout/activity_drawable.xml)
+
+  - 圆角按钮
+
+  - 带边框的圆角按钮
+
+  - 单个边框的按钮
+
+  - 渐变按钮
+
+  - 带点击反馈的按钮
+
+  - 带点击反馈的圆角按钮
+  
+  - 带阴影的按钮
+  
+  - 带虚线边框的文本
+
+  - 带虚线边框和点击反馈的按钮
+
+  - 着色
+
+  - 图片渐变切换
+
+  - 圆环
+
+  - 红色圆点
+  
+  - 带阴影的按钮
