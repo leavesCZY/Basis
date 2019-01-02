@@ -1,6 +1,10 @@
 package hello.leavesc.androidutils.sytem.model;
 
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
+
+import java.io.File;
 
 /**
  * 作者：leavesC
@@ -23,11 +27,19 @@ public class Application {
     //版本号
     private String version;
 
-    public Application(String applicationName, String packageName, Drawable applicationIcon, String version) {
-        this.applicationName = applicationName;
-        this.packageName = packageName;
-        this.applicationIcon = applicationIcon;
-        this.version = version;
+    //最后更新时间
+    private long lastUpdateTime;
+
+    //apk路径
+    private String sourceDir;
+
+    //apk大小 MB
+    public long getApkSize() {
+        if (TextUtils.isEmpty(sourceDir)) {
+            return 0;
+        }
+        File apkFile = new File(sourceDir);
+        return apkFile.length() / 1024 / 1024;
     }
 
     public String getApplicationName() {
@@ -62,9 +74,33 @@ public class Application {
         this.version = version;
     }
 
+    public long getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
+    public void setLastUpdateTime(long lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
+    }
+
+    public String getSourceDir() {
+        return sourceDir;
+    }
+
+    public void setSourceDir(String sourceDir) {
+        this.sourceDir = sourceDir;
+    }
+
+    @NonNull
     @Override
     public String toString() {
-        return "应用名：" + applicationName + "\n应用包名：" + packageName + "\n版本号：" + version;
+        return "Application{" +
+                "applicationName='" + applicationName + '\'' +
+                ", packageName='" + packageName + '\'' +
+                ", applicationIcon=" + applicationIcon +
+                ", version='" + version + '\'' +
+                ", lastUpdateTime=" + lastUpdateTime +
+                ", sourceDir='" + sourceDir + '\'' +
+                '}';
     }
 
 }

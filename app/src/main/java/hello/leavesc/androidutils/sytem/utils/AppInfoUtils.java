@@ -21,7 +21,7 @@ public class AppInfoUtils {
 
     private enum ApplicationType {
         //所有应用、非系统应用、系统应用
-        allApplication, nonSystemApplication, systemApplication
+        AllApplication, NonSystemApplication, SystemApplication
     }
 
     /**
@@ -31,18 +31,23 @@ public class AppInfoUtils {
         List<Application> applicationList = new ArrayList<>();
         List<PackageInfo> packageInfoList = context.getPackageManager().getInstalledPackages(0);
         for (PackageInfo packageInfo : packageInfoList) {
-            Application application = new Application(packageInfo.applicationInfo.loadLabel(context.getPackageManager()).toString(), packageInfo.packageName,
-                    packageInfo.applicationInfo.loadIcon(context.getPackageManager()), packageInfo.versionName);
+            Application application = new Application();
+            application.setApplicationName(packageInfo.applicationInfo.loadLabel(context.getPackageManager()).toString());
+            application.setPackageName(packageInfo.packageName);
+            application.setApplicationIcon(packageInfo.applicationInfo.loadIcon(context.getPackageManager()));
+            application.setVersion(packageInfo.versionName);
+            application.setSourceDir(packageInfo.applicationInfo.sourceDir);
+            application.setLastUpdateTime(packageInfo.lastUpdateTime);
             switch (applicationType) {
-                case allApplication:
+                case AllApplication:
                     applicationList.add(application);
                     break;
-                case systemApplication:
+                case SystemApplication:
                     if (isSystemApplication(packageInfo)) {
                         applicationList.add(application);
                     }
                     break;
-                case nonSystemApplication:
+                case NonSystemApplication:
                     if (!isSystemApplication(packageInfo)) {
                         applicationList.add(application);
                     }
@@ -63,21 +68,21 @@ public class AppInfoUtils {
      * 获取设备所有的应用
      */
     public static List<Application> getAllApplication(Context context) {
-        return getApplicationInfo(context, ApplicationType.allApplication);
+        return getApplicationInfo(context, ApplicationType.AllApplication);
     }
 
     /**
      * 获取设备所有的系统应用
      */
     public static List<Application> getAllSystemApplication(Context context) {
-        return getApplicationInfo(context, ApplicationType.systemApplication);
+        return getApplicationInfo(context, ApplicationType.SystemApplication);
     }
 
     /**
      * 获取设备所有的非系统应用
      */
     public static List<Application> getAllNonSystemApplication(Context context) {
-        return getApplicationInfo(context, ApplicationType.nonSystemApplication);
+        return getApplicationInfo(context, ApplicationType.NonSystemApplication);
     }
 
     /**
