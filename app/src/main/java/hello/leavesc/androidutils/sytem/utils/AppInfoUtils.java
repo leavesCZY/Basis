@@ -1,19 +1,21 @@
-package com.czy.androidutils.sytem.utils;
+package hello.leavesc.androidutils.sytem.utils;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import com.czy.androidutils.sytem.model.Application;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import hello.leavesc.androidutils.sytem.model.Application;
+
 /**
- * 作者：叶应是叶
+ * 作者：leavesC
  * 时间：2018/3/11 13:31
  * 描述：
+ * GitHub：https://github.com/leavesC
+ * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
 public class AppInfoUtils {
 

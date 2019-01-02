@@ -1,13 +1,15 @@
-package com.czy.androidutils.ad.utils;
+package hello.leavesc.androidutils.ad.utils;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
 /**
- * 作者：叶应是叶
+ * 作者：leavesC
  * 时间：2018/3/14 22:38
  * 描述：
+ * GitHub：https://github.com/leavesC
+ * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
 public class AdUtils {
 

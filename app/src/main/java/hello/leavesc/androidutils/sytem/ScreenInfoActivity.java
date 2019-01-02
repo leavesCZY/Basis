@@ -1,17 +1,19 @@
-package com.czy.androidutils.sytem;
+package hello.leavesc.androidutils.sytem;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.czy.androidutils.BaseActivity;
-import com.czy.androidutils.R;
-import com.czy.androidutils.sytem.utils.ScreenUtils;
+import hello.leavesc.androidutils.BaseActivity;
+import hello.leavesc.androidutils.R;
+import hello.leavesc.androidutils.sytem.utils.ScreenUtils;
 
 /**
- * 作者：叶应是叶
+ * 作者：leavesC
  * 时间：2018/3/11 14:19
  * 描述：
+ * GitHub：https://github.com/leavesC
+ * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
 public class ScreenInfoActivity extends BaseActivity {
 

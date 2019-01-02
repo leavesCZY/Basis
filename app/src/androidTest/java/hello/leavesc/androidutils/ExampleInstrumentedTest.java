@@ -1,4 +1,4 @@
-package com.czy.androidutils;
+package hello.leavesc.androidutils;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

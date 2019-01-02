@@ -1,11 +1,13 @@
-package com.czy.androidutils.sytem.model;
+package hello.leavesc.androidutils.sytem.model;
 
 import android.graphics.drawable.Drawable;
 
 /**
- * 作者：叶应是叶
+ * 作者：leavesC
  * 时间：2018/3/11 13:33
  * 描述：
+ * GitHub：https://github.com/leavesC
+ * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
 public class Application {
 

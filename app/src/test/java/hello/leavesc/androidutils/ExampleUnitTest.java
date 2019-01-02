@@ -1,4 +1,4 @@
-package com.czy.androidutils;
+package hello.leavesc.androidutils;
 
 import org.junit.Test;
 

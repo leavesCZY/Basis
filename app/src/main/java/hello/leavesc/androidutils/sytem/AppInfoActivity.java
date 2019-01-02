@@ -1,20 +1,21 @@
-package com.czy.androidutils.sytem;
+package hello.leavesc.androidutils.sytem;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
-import com.czy.androidutils.BaseActivity;
-import com.czy.androidutils.R;
-import com.czy.androidutils.sytem.model.Application;
-import com.czy.androidutils.sytem.utils.AppInfoUtils;
-
 import java.util.List;
 
+import hello.leavesc.androidutils.BaseActivity;
+import hello.leavesc.androidutils.R;
+import hello.leavesc.androidutils.sytem.model.Application;
+import hello.leavesc.androidutils.sytem.utils.AppInfoUtils;
+
 /**
- * 作者：叶应是叶
+ * 作者：leavesC
  * 时间：2018/3/11 13:31
  * 描述：
+ * GitHub：https://github.com/leavesC
+ * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
 public class AppInfoActivity extends BaseActivity {
 

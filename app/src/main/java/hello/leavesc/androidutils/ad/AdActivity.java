@@ -1,18 +1,19 @@
-package com.czy.androidutils.ad;
+package hello.leavesc.androidutils.ad;
 
 import android.os.Bundle;
 import android.view.View;
 
-import com.czy.androidutils.BaseActivity;
-import com.czy.androidutils.R;
-import com.czy.androidutils.ad.utils.AdUtils;
-
-import static com.czy.androidutils.sytem.utils.AppInfoUtils.appExist;
+import hello.leavesc.androidutils.BaseActivity;
+import hello.leavesc.androidutils.R;
+import hello.leavesc.androidutils.ad.utils.AdUtils;
+import hello.leavesc.androidutils.sytem.utils.AppInfoUtils;
 
 /**
- * 作者：叶应是叶
+ * 作者：leavesC
  * 时间：2018/3/14 22:39
  * 描述：
+ * GitHub：https://github.com/leavesC
+ * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
 public class AdActivity extends BaseActivity {
 
@@ -27,7 +28,7 @@ public class AdActivity extends BaseActivity {
     }
 
     public void openJdShop(View view) {
-        if (appExist(this, "com.jingdong.app.mall")) {
+        if (AppInfoUtils.appExist(this, "com.jingdong.app.mall")) {
             AdUtils.openJdShop(this, 1000004123);
         } else {
             showToast("没有安装京东客户端");
@@ -35,7 +36,7 @@ public class AdActivity extends BaseActivity {
     }
 
     public void openJdGoods(View view) {
-        if (appExist(this, "com.jingdong.app.mall")) {
+        if (AppInfoUtils.appExist(this, "com.jingdong.app.mall")) {
             AdUtils.openJdGoods(this, 6703337);
         } else {
             showToast("没有安装京东客户端");
@@ -43,7 +44,7 @@ public class AdActivity extends BaseActivity {
     }
 
     public void openTaoBaoShop(View view) {
-        if (appExist(this, "com.taobao.taobao")) {
+        if (AppInfoUtils.appExist(this, "com.taobao.taobao")) {
             AdUtils.openTaoBaoShop(this, 104736810);
         } else {
             showToast("没有安装淘宝客户端");
@@ -51,7 +52,7 @@ public class AdActivity extends BaseActivity {
     }
 
     public void openTaoBaoGoods(View view) {
-        if (appExist(this, "com.taobao.taobao")) {
+        if (AppInfoUtils.appExist(this, "com.taobao.taobao")) {
             AdUtils.openTaoBaoGoods(this, 547630642483L);
         } else {
             showToast("没有安装淘宝客户端");
@@ -59,7 +60,7 @@ public class AdActivity extends BaseActivity {
     }
 
     public void openTmallShop(View view) {
-        if (appExist(this, "com.tmall.wireless")) {
+        if (AppInfoUtils.appExist(this, "com.tmall.wireless")) {
             AdUtils.openTmallShop(this, 104736810);
         } else {
             showToast("没有安装天猫客户端");
@@ -67,7 +68,7 @@ public class AdActivity extends BaseActivity {
     }
 
     public void openTmallGoods(View view) {
-        if (appExist(this, "com.tmall.wireless")) {
+        if (AppInfoUtils.appExist(this, "com.tmall.wireless")) {
             AdUtils.openTmallGoods(this, 547630642483L);
         } else {
             showToast("没有安装天猫客户端");
