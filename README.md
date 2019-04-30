@@ -1,7 +1,7 @@
 # Basis
 
 
-## 1. 屏幕相关 -> [ScreenUtils.java](\library\src\main\java\leavesc\hello\basis\utils\ScreenUtils.java)
+## 1. 屏幕相关 -> [ScreenUtils.java](/library/src/main/java/leavesc/hello/basis/utils/ScreenUtils.java)
  
   - getTitleHeight：获取标题栏高度
   
@@ -19,7 +19,7 @@
   
   - getAvailableScreenHeight：获取不包括虚拟按键在内的屏幕高度
   
-## 2. 尺寸相关 ->  [DisplayUtils.java](\library\src\main\java\leavesc\hello\basis\utils\DisplayUtils.java)
+## 2. 尺寸相关 ->  [DisplayUtils.java](/library/src/main/java/leavesc/hello/basis/utils/DisplayUtils.java)
 
   - dp2px：dp值转换为px值
   
@@ -30,7 +30,7 @@
   - sp2px：sp值转换为px值
 
 
-## 3. 应用相关 -> [AppInfoUtils.java](\library\src\main\java\leavesc\hello\basis\utils\AppInfoUtils.java)
+## 3. 应用相关 -> [AppInfoUtils.java](/library/src/main/java/leavesc/hello/basis/utils/AppInfoUtils.java)
  
   - isSystemApplication：判断是否是系统应用
   
@@ -45,7 +45,7 @@
   - appExist：判断指定包名的应用是否存在
 
 
-## 4. 系统参数相关 -> [SystemInfoActivity.java](\app\src\main\java\leavesc\hello\basisdemo\SystemInfoActivity.java)
+## 4. 系统参数相关 -> [SystemInfoActivity.java](/app/src/main/java/leavesc/hello/basisdemo/SystemInfoActivity.java)
 
   - getTotalMemory：设备总内存大小
   
@@ -58,7 +58,7 @@
   - showSystemInfo：更多系统参数~~
 
 
-## 5. 广告相关 -> [AdUtils.java](\library\src\main\java\leavesc\hello\basis\utils\AdUtils.java)
+## 5. 广告相关 -> [AdUtils.java](/library/src/main/java/leavesc/hello/basis/utils/AdUtils.java)
 
   - openApplicationMarket：打开应用市场指定应用的详情页
 
