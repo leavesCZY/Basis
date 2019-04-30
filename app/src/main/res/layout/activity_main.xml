@@ -9,6 +9,20 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="showLoadingDialog"
+        android:text="showLoadingDialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="dismissLoadingDialog"
+        android:text="dismissLoadingDialog"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="showSystemInfo"
         android:text="获取系统参数" />
 
@@ -29,12 +43,5 @@
         android:layout_height="wrap_content"
         android:onClick="showAdAction"
         android:text="广告相关" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showDrawable"
-        android:text="Drawable相关"
-        android:textAllCaps="false" />
 
 </LinearLayout>

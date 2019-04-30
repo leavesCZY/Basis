@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="hello.leavesc.androidutils">
+    package="leavesc.hello.basisdemo">
 
     <application
         android:allowBackup="true"
@@ -18,11 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sytem.SystemInfoActivity" />
-        <activity android:name=".sytem.AppInfoActivity" />
-        <activity android:name=".sytem.ScreenInfoActivity" />
-        <activity android:name=".ad.AdActivity" />
-        <activity android:name=".drawable.DrawableActivity" />
+        <activity android:name=".SystemInfoActivity" />
+        <activity android:name=".ScreenInfoActivity" />
+        <activity android:name=".AppInfoActivity" />
+        <activity android:name=".AdActivity" />
     </application>
 
 </manifest>

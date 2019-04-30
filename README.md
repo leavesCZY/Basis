@@ -1,7 +1,7 @@
-# AndroidUtils
-Android工具类库
+# Basis
 
-#### 1. 屏幕相关 -> [ScreenUtils.java](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/java/com/czy/androidutils/sytem/utils/ScreenUtils.java)
+
+## 1. 屏幕相关 -> [ScreenUtils.java](\library\src\main\java\leavesc\hello\basis\utils\ScreenUtils.java)
  
   - getTitleHeight：获取标题栏高度
   
@@ -19,9 +19,7 @@ Android工具类库
   
   - getAvailableScreenHeight：获取不包括虚拟按键在内的屏幕高度
   
-<br>
-
-#### 2. 尺寸相关 ->  [DisplayUtils.java](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/java/com/czy/androidutils/sytem/utils/DisplayUtils.java)
+## 2. 尺寸相关 ->  [DisplayUtils.java](\library\src\main\java\leavesc\hello\basis\utils\DisplayUtils.java)
 
   - dp2px：dp值转换为px值
   
@@ -31,9 +29,8 @@ Android工具类库
   
   - sp2px：sp值转换为px值
 
-<br>
 
-#### 3. 应用相关 -> [AppInfoUtils.java](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/java/com/czy/androidutils/sytem/utils/AppInfoUtils.java)
+## 3. 应用相关 -> [AppInfoUtils.java](\library\src\main\java\leavesc\hello\basis\utils\AppInfoUtils.java)
  
   - isSystemApplication：判断是否是系统应用
   
@@ -47,9 +44,8 @@ Android工具类库
 
   - appExist：判断指定包名的应用是否存在
 
-<br>
 
-#### 4. 系统参数相关 -> [SystemInfoActivity.java](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/java/com/czy/androidutils/sytem/SystemInfoActivity.java)
+## 4. 系统参数相关 -> [SystemInfoActivity.java](\app\src\main\java\leavesc\hello\basisdemo\SystemInfoActivity.java)
 
   - getTotalMemory：设备总内存大小
   
@@ -61,9 +57,8 @@ Android工具类库
   
   - showSystemInfo：更多系统参数~~
 
-<br>
 
-#### 5. 广告相关 -> [AdUtils.java](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/java/com/czy/androidutils/ad/utils/AdUtils.java)
+## 5. 广告相关 -> [AdUtils.java](\library\src\main\java\leavesc\hello\basis\utils\AdUtils.java)
 
   - openApplicationMarket：打开应用市场指定应用的详情页
 
@@ -78,33 +73,3 @@ Android工具类库
   - openTmallShop：打开天猫客户端指定商铺
   
   - openTmallGoods：打开天猫客户端指定商品详情页
-
-#### 6. Drawable相关 -> [activity_drawable.xml](https://github.com/leavesC/AndroidUtils/blob/master/app/src/main/res/layout/activity_drawable.xml)
-
-  - 圆角按钮
-
-  - 带边框的圆角按钮
-
-  - 单个边框的按钮
-
-  - 渐变按钮
-
-  - 带点击反馈的按钮
-
-  - 带点击反馈的圆角按钮
-  
-  - 带阴影的按钮
-  
-  - 带虚线边框的文本
-
-  - 带虚线边框和点击反馈的按钮
-
-  - 着色
-
-  - 图片渐变切换
-
-  - 圆环
-
-  - 红色圆点
-  
-  - 带阴影的按钮
