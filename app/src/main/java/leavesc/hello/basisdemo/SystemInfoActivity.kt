@@ -1,35 +1,29 @@
-package leavesc.hello.basisdemo;
+package leavesc.hello.basisdemo
 
-import android.app.ActivityManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.text.format.Formatter;
-import android.widget.TextView;
-
-import leavesc.hello.basis.view.BaseActivity;
+import android.app.ActivityManager
+import android.content.Context
+import android.os.Build
+import android.os.Bundle
+import android.text.format.Formatter
+import android.widget.TextView
+import leavesc.hello.basis.view.BaseActivity
 
 /**
  * 作者：leavesC
- * 时间：2019/4/30 22:12
+ * 时间：2019/6/21 10:23
  * 描述：
- * GitHub：https://github.com/leavesC
- * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
-public class SystemInfoActivity extends BaseActivity {
+class SystemInfoActivity : BaseActivity() {
 
-    private static final String TAG = "SystemInfoActivity";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_system_info);
-        showSystemInfo();
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_system_info)
+        showSystemInfo()
     }
 
-    private void showSystemInfo() {
-        TextView tv_systemInfo = findViewById(R.id.tv_systemInfo);
-        String info = "主板：" + Build.BOARD
+    private fun showSystemInfo() {
+        val tv_systemInfo = findViewById<TextView>(R.id.tv_systemInfo)
+        val info = ("主板：" + Build.BOARD
                 + "\n" + "系统定制商：" + Build.BRAND
                 + "\n" + "设备参数：" + Build.DEVICE
                 + "\n" + "显示屏参数：" + Build.DISPLAY
@@ -68,48 +62,39 @@ public class SystemInfoActivity extends BaseActivity {
                 + "\n" + "设备总内存大小：" + Formatter.formatFileSize(this, getTotalMemory(this))
                 + "\n" + "设备可用内存大小：" + Formatter.formatFileSize(this, getAvailMemory(this))
                 + "\n" + "设备内存不足的阀值：" + Formatter.formatFileSize(this, getThreshold(this))
-                + "\n" + "设备是否处于低内存状态（可用内存是否小于设备内存不足的阀值）：" + isLowMemory(this);
-        tv_systemInfo.setText(info);
+                + "\n" + "设备是否处于低内存状态（可用内存是否小于设备内存不足的阀值）：" + isLowMemory(this))
+        tv_systemInfo.text = info
     }
 
-    public static long getTotalMemory(Context context) {
-        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        if (activityManager != null) {
-            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-            activityManager.getMemoryInfo(memoryInfo);
-            return memoryInfo.totalMem;
-        }
-        return 0;
-    }
+    companion object {
 
-    public static long getAvailMemory(Context context) {
-        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        if (activityManager != null) {
-            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-            activityManager.getMemoryInfo(memoryInfo);
-            return memoryInfo.availMem;
+        fun getTotalMemory(context: Context): Long {
+            val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            val memoryInfo = ActivityManager.MemoryInfo()
+            activityManager.getMemoryInfo(memoryInfo)
+            return memoryInfo.totalMem
         }
-        return 0;
-    }
 
-    public static long getThreshold(Context context) {
-        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        if (activityManager != null) {
-            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-            activityManager.getMemoryInfo(memoryInfo);
-            return memoryInfo.threshold;
+        fun getAvailMemory(context: Context): Long {
+            val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            val memoryInfo = ActivityManager.MemoryInfo()
+            activityManager.getMemoryInfo(memoryInfo)
+            return memoryInfo.availMem
         }
-        return 0;
-    }
 
-    public static boolean isLowMemory(Context context) {
-        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        if (activityManager != null) {
-            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-            activityManager.getMemoryInfo(memoryInfo);
-            return memoryInfo.lowMemory;
+        fun getThreshold(context: Context): Long {
+            val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            val memoryInfo = ActivityManager.MemoryInfo()
+            activityManager.getMemoryInfo(memoryInfo)
+            return memoryInfo.threshold
         }
-        return false;
+
+        fun isLowMemory(context: Context): Boolean {
+            val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            val memoryInfo = ActivityManager.MemoryInfo()
+            activityManager.getMemoryInfo(memoryInfo)
+            return memoryInfo.lowMemory
+        }
     }
 
 }
