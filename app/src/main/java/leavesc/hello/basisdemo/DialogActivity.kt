@@ -20,7 +20,7 @@ class DialogActivity : BaseActivity() {
     }
 
     fun showLoadingDialog(view: View) {
-        showLoadingDialog("正在加载", true)
+        showLoadingDialog(true)
     }
 
     fun showMessageDialog(view: View) {

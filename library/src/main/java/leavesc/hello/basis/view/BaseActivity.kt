@@ -17,11 +17,11 @@ open class BaseActivity : AppCompatActivity(), IBaseViewAction {
 
     private var loadingDialog: LoadingDialog? = null
 
-    override fun showLoadingDialog(message: String, cancelable: Boolean) {
+    override fun showLoadingDialog(cancelable: Boolean) {
         if (loadingDialog == null) {
             loadingDialog = LoadingDialog(context)
         }
-        loadingDialog?.show(message, cancelable, false)
+        loadingDialog?.start(cancelable, cancelable)
     }
 
     override fun dismissLoadingDialog() {

@@ -3,10 +3,9 @@ package leavesc.hello.basis.widget.dialog
 import android.app.Dialog
 import android.content.Context
 import android.view.animation.Animation
-import android.view.animation.AnimationUtils
+import android.view.animation.LinearInterpolator
+import android.view.animation.RotateAnimation
 import android.widget.ImageView
-import android.widget.TextView
-import androidx.annotation.StringRes
 import leavesc.hello.basis.R
 
 /**
@@ -18,39 +17,43 @@ class LoadingDialog(context: Context) : Dialog(context, R.style.LoadingDialogThe
 
     private val iv_loading: ImageView
 
-    private val tv_hint: TextView
-
-    private val animation: Animation
+    private val rotateAnimation: RotateAnimation
 
     init {
         setContentView(R.layout.dialog_loading)
         iv_loading = findViewById(R.id.iv_loading)
-        tv_hint = findViewById(R.id.tv_hint)
-        animation = AnimationUtils.loadAnimation(context, R.anim.loading_dialog)
+        rotateAnimation = RotateAnimation(
+                0f,
+                360f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f
+        )
+        rotateAnimation.duration = 1000
+        rotateAnimation.repeatCount = -1
+        rotateAnimation.interpolator = LinearInterpolator()
+        rotateAnimation.repeatMode = Animation.RESTART
+
     }
 
-    fun show(hintText: String, cancelable: Boolean, canceledOnTouchOutside: Boolean) {
+    fun start(cancelable: Boolean = false, canceledOnTouchOutside: Boolean = false) {
         setCancelable(cancelable)
         setCanceledOnTouchOutside(canceledOnTouchOutside)
-        tv_hint.text = hintText
         iv_loading.clearAnimation()
-        iv_loading.startAnimation(animation)
+        iv_loading.startAnimation(rotateAnimation)
         show()
-    }
-
-    fun show(@StringRes hintTextRes: Int, cancelable: Boolean, canceledOnTouchOutside: Boolean) {
-        show(context.getString(hintTextRes), cancelable, canceledOnTouchOutside)
     }
 
     override fun cancel() {
         super.cancel()
-        animation.cancel()
+        rotateAnimation.cancel()
         iv_loading.clearAnimation()
     }
 
     override fun dismiss() {
         super.dismiss()
-        animation.cancel()
+        rotateAnimation.cancel()
         iv_loading.clearAnimation()
     }
 

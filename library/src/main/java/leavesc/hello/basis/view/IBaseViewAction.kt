@@ -15,11 +15,7 @@ interface IBaseViewAction {
 
     val context: Context
 
-    fun showLoadingDialog(message: String, cancelable: Boolean)
-
-    fun showLoadingDialog(message: String) {
-        showLoadingDialog(message, false)
-    }
+    fun showLoadingDialog(cancelable: Boolean = false)
 
     fun dismissLoadingDialog()
 
