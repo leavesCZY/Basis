@@ -3,9 +3,9 @@ package leavesc.hello.basisdemo
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import leavesc.hello.basis.dialog.MessageDialog
+import leavesc.hello.basis.dialog.base.BaseDialogFragment
 import leavesc.hello.basis.view.BaseActivity
-import leavesc.hello.basis.widget.dialog.MessageDialog
-import leavesc.hello.basis.widget.dialog.base.BaseDialogFragment
 
 /**
  * 作者：leavesC
